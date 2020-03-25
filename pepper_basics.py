@@ -1,10 +1,11 @@
-# python3
 # coding: utf-8
 
 import cv2
-import time
+
 from qibullet import SimulationManager
 from qibullet import PepperVirtual
+
+import time
 
 
 def main():
@@ -28,4 +29,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

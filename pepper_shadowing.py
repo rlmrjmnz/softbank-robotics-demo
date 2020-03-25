@@ -1,9 +1,10 @@
-# python
+# python 2
 # coding: utf-8
 
 import qi
 import sys
 import argparse
+
 from qibullet import SimulationManager
 
 
@@ -41,7 +42,7 @@ if __name__ == "__main__":
     angle_names = list()
     angles_values = list()
 
-    for name in pepper_virtual.joint_dict.keys():
+    for name in list(pepper_virtual.joint_dict.keys()):
         if "Finger" in name or "Thumb" in name:
             continue
         else:

@@ -1,10 +1,12 @@
-# python3
 # coding: utf-8
+
+from __future__ import print_function
 
 from qibullet import SimulationManager
 from qibullet import PepperVirtual
 
 from time import sleep
+
 
 def main(sim, client):
     pepper = sim.spawnPepper(client, spawn_ground_plane=True)
@@ -28,6 +30,7 @@ def main(sim, client):
 
     while True:
         pass
+
 
 if __name__ == "__main__":
     simulation_manager = SimulationManager()

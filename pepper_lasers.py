@@ -1,10 +1,11 @@
-# python3
 # coding: utf-8
+
+from __future__ import print_function
 
 import pybullet
 import pybullet_data
-from qibullet import PepperVirtual
 from qibullet import SimulationManager
+from qibullet import PepperVirtual
 
 
 def main():
