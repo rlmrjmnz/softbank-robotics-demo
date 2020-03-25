@@ -1,21 +1,21 @@
-# python3
 # coding: utf-8
 
-import sys
-import time
+from __future__ import print_function
+from builtins import input
+
 import pybullet as p
 from qibullet import SimulationManager
 from qibullet import PepperVirtual
 from qibullet import NaoVirtual
 from qibullet import RomeoVirtual
 
+import sys
+from time import sleep
+
 if __name__ == "__main__":
     simulation_manager = SimulationManager()
 
-    if (sys.version_info > (3, 0)):
-        rob = input("Which robot should be spawned? (pepper/nao/romeo): ")
-    else:
-        rob = raw_input("Which robot should be spawned? (pepper/nao/romeo): ")
+    rob = input("Which robot should be spawned? (pepper/nao/romeo): ")
 
     client = simulation_manager.launchSimulation(gui=True)
 
@@ -30,10 +30,10 @@ if __name__ == "__main__":
         simulation_manager.stopSimulation(client)
         sys.exit(1)
 
-    time.sleep(1.0)
+    sleep(1.0)
     joint_parameters = list()
 
-    for name, joint in robot.joint_dict.items():
+    for name, joint in list(robot.joint_dict.items()):
         if "Finger" not in name and "Thumb" not in name:
             joint_parameters.append((
                 p.addUserDebugParameter(

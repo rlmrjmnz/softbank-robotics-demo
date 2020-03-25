@@ -1,9 +1,12 @@
-# python
-# -*- encoding: UTF-8 -*-
+# python 2
+# coding: utf-8
 
 """Example: Use goToPosture Method"""
 
+from __future__ import print_function
+
 import qi
+
 import argparse
 import sys
 from time import sleep
@@ -40,7 +43,7 @@ def main(session):
     motion_service.setAngles("HeadPitch", head_pos, 0.5)
     sleep(2)
 
-    print posture_service.getPostureFamily()
+    print(posture_service.getPostureFamily())
 
 
 if __name__ == "__main__":
@@ -55,7 +58,7 @@ if __name__ == "__main__":
     try:
         session.connect("tcp://" + args.ip + ":" + str(args.port))
     except RuntimeError:
-        print ("Can't connect to Naoqi at ip \"" + args.ip + "\" on port " + str(args.port) +".\n"
+        print("Can't connect to Naoqi at ip \"" + args.ip + "\" on port " + str(args.port) + ".\n"
                "Please check your script arguments. Run with -h option for help.")
         sys.exit(1)
     main(session)
