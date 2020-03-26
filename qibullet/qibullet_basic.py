@@ -9,24 +9,24 @@ from time import sleep
 
 
 def main(sim, client):
-    pepper = sim.spawnPepper(client, spawn_ground_plane=True)
+    robot = sim.spawnPepper(client, spawn_ground_plane=True)
 
     print("Hi! I'm Peeper")
     sleep(2)
     print("I show you my postures")
     sleep(2)
 
-    pepper.goToPosture("StandInit", 1.0)
-    pepper.goToPosture("StandZero", 1.0)
-    pepper.goToPosture("Crouch", 1.0)
-    pepper.goToPosture("StandInit", 1.0)
+    robot.goToPosture("StandInit", 1.0)
+    robot.goToPosture("StandZero", 1.0)
+    robot.goToPosture("Crouch", 1.0)
+    robot.goToPosture("StandInit", 1.0)
 
     print("Thank you!")
 
-    head_pos = pepper.getAnglesPosition("HeadPitch")
-    pepper.setAngles("HeadPitch", 0.25, 0.5)
+    head_pos = robot.getAnglesPosition("HeadPitch")
+    robot.setAngles("HeadPitch", 0.25, 0.5)
     sleep(2)
-    pepper.setAngles("HeadPitch", head_pos, 0.5)
+    robot.setAngles("HeadPitch", head_pos, 0.5)
 
     while True:
         pass
